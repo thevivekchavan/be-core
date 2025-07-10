@@ -1,3 +1,4 @@
+// src/users/users.service.ts
 import { Injectable } from '@nestjs/common';
 
 interface User {
@@ -5,15 +6,15 @@ interface User {
   age: number;
 }
 @Injectable()
-export class AppService {
+export class UsersService {
   private users: User[] = [];
 
-  findAll() {
+  public findTestAll() {
     return this.users;
   }
 
-  create(user: User) {
+  create(user: any) {
     this.users.push(user);
-    return { message: 'User added', user };
+    return { message: 'User added' };
   }
 }
