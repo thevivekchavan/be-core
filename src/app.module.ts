@@ -2,12 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { RedisService } from './services/broker/redis.service';
-import { JwtService } from './services/auth-token/jwt.service';
+import { AuthenticationModule } from './auth/authentication.module';
 
 @Module({
-  imports: [ConfigModule.forRoot()],
+  imports: [ConfigModule.forRoot(), AuthenticationModule],
   controllers: [AppController],
-  providers: [AppService, RedisService, JwtService],
+  providers: [AppService],
 })
 export class AppModule {}

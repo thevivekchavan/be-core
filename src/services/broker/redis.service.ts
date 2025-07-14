@@ -50,4 +50,4 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
   async flushAll(): Promise<'OK'> {
     return this.redis.flushall();
   }
-} 
+}
